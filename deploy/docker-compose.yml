@@ -1,7 +1,7 @@
 # vormwaar op een Synology (Container Manager → Project → Maken)
 # - "sync" haalt elke minuut de nieuwste versie van GitHub op
-# - "web" serveert de site op poort 8081 (Cloudflare Tunnel wijst daarheen)
-#   (8080 is al in gebruik door afgelegd)
+# - "web" serveert de site op poort 8097 (Cloudflared in Home Assistant wijst daarheen)
+#   (8095 en 8096 zijn in gebruik door afgelegd)
 services:
   sync:
     image: alpine/git:latest
@@ -25,7 +25,7 @@ services:
     restart: unless-stopped
     depends_on: [sync]
     ports:
-      - "8081:80"
+      - "8097:80"
     volumes:
       - ./site:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
