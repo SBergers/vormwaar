@@ -1,0 +1,31 @@
+# vormwaar op een Synology (Container Manager → Project → Maken)
+# - "sync" haalt elke minuut de nieuwste versie van GitHub op
+# - "web" serveert de site op poort 8081 (Cloudflare Tunnel wijst daarheen)
+#   (8080 is al in gebruik door afgelegd)
+services:
+  sync:
+    image: alpine/git:latest
+    container_name: vormwaar-sync
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        git config --global --add safe.directory /site
+        if [ ! -d /site/.git ]; then git clone https://github.com/SBergers/vormwaar.git /site; fi
+        while true; do
+          git -C /site fetch -q origin && git -C /site reset -q --hard origin/main
+          sleep 60
+        done
+    volumes:
+      - ./site:/site
+
+  web:
+    image: nginx:alpine
+    container_name: vormwaar-web
+    restart: unless-stopped
+    depends_on: [sync]
+    ports:
+      - "8081:80"
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vormwaar · laag voor laag gemaakt in Nederland</title>
+<meta name="description" content="Vormwaar maakt 3D-geprinte onderdelen, accessoires en cadeaus, laag voor laag gemaakt in Nederland. We zijn net begonnen.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1E3F8F; --cream:#F6F1E7; --ink:#14213D;
+    --green:#9BD08A; --yellow:#FFC93C; --orange:#F26B1D; --muted:#4A5675;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--cream); color:var(--ink);
+    font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:500;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:0 24px}
+  header{padding:32px 0}
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--blue); font-weight:800; font-size:26px; letter-spacing:-.5px}
+  .brand svg{width:40px; height:40px}
+
+  .hero{padding-top:56px; padding-bottom:72px}
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background:#fff; border:1.5px solid var(--blue); color:var(--blue);
+    border-radius:999px; padding:6px 14px; font-size:14px; font-weight:800; letter-spacing:.3px;
+  }
+  .dot{width:9px; height:9px; border-radius:50%; background:var(--orange); animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{50%{opacity:.35}}
+  @media (prefers-reduced-motion:reduce){.dot{animation:none}}
+  h1{font-size:clamp(40px,8vw,76px); line-height:1.02; letter-spacing:-2px; margin:24px 0 20px; color:var(--blue); font-weight:800}
+  h1 .l1{color:#3F8A2F} h1 .l2{color:#A87400} h1 .l3{color:#D2520A}
+  .lead{font-size:clamp(18px,2.4vw,22px); max-width:620px; margin:0; color:var(--ink)}
+
+  .layers{display:flex; flex-direction:column; gap:6px; margin:48px 0 0; max-width:240px}
+  .layers span{height:10px; border-radius:2px}
+
+  section{padding:56px 0; border-top:2px solid rgba(30,63,143,.12)}
+  h2{font-size:28px; letter-spacing:-.5px; margin:0 0 20px; color:var(--blue); font-weight:800}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
+  .card{background:#fff; border-radius:14px; padding:24px; border:1.5px solid rgba(30,63,143,.15)}
+  .card h3{margin:0 0 8px; font-size:20px; color:var(--blue); font-weight:800}
+  .card p{margin:0 0 16px; color:var(--muted)}
+  .card a{color:var(--blue); font-weight:800; text-decoration:none; border-bottom:2px solid var(--yellow)}
+  .card a:hover{border-bottom-color:var(--orange)}
+
+  ol.steps{list-style:none; padding:0; margin:0; display:grid; gap:12px}
+  ol.steps li{display:flex; gap:14px; align-items:flex-start; font-size:18px}
+  .tick{flex:0 0 28px; height:28px; border-radius:50%; display:grid; place-items:center; font-size:15px; font-weight:800; color:#fff; background:var(--blue)}
+  .tick.todo{background:transparent; border:2px solid var(--blue); color:var(--blue)}
+  .done{color:var(--ink)} .todo-txt{color:var(--muted)}
+
+  footer{background:var(--blue); color:#DCE8F7; padding:32px 0; margin-top:24px; font-size:15px}
+  footer a{color:#fff}
+  footer .row{display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Vormwaar, home">
+      <svg viewBox="110 70 280 280" aria-hidden="true"><defs><clipPath id="vh"><path d="M120 80 L196 80 L250 250 L304 80 L380 80 L286 340 L214 340 Z"/></clipPath></defs><g clip-path="url(#vh)"><rect x="100" y="80" width="300" height="34" fill="#9BD08A"/><rect x="100" y="118" width="300" height="34" fill="#FFC93C"/><rect x="100" y="156" width="300" height="34" fill="#F26B1D"/><rect x="100" y="194" width="300" height="150" fill="#1E3F8F"/></g></svg>
+      vormwaar
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <span class="badge"><span class="dot" aria-hidden="true"></span>We zijn net begonnen</span>
+    <h1><span class="l1">Laag</span> <span class="l2">voor</span> <span class="l3">laag</span><br>gemaakt in Nederland.</h1>
+    <p class="lead">Vormwaar maakt 3D-geprinte onderdelen, handige accessoires en cadeaus. Elk stuk wordt pas geprint als jij het bestelt, en met zorg gecontroleerd voor het de deur uit gaat.</p>
+    <div class="layers" aria-hidden="true">
+      <span style="background:var(--green)"></span>
+      <span style="background:var(--yellow)"></span>
+      <span style="background:var(--orange)"></span>
+      <span style="background:var(--blue)"></span>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>Waar we staan</h2>
+      <ol class="steps">
+        <li><span class="tick" aria-hidden="true">✓</span><span class="done">Eerste ontwerpen gemaakt en getest</span></li>
+        <li><span class="tick" aria-hidden="true">✓</span><span class="done">Etsy-shop live</span></li>
+        <li><span class="tick" aria-hidden="true">✓</span><span class="done">Ingeschreven bij de KVK, deze week!</span></li>
+        <li><span class="tick todo" aria-hidden="true">4</span><span class="todo-txt">Meer producten en meer plekken om te bestellen</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Nu al te bestellen</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Onderdelen &amp; accessoires</h3>
+          <p>Muurbeugels, houders en vervangende onderdelen voor fiets, camper, BBQ en huis.</p>
+          <a href="https://www.etsy.com/shop/Vormwaar">Bekijk de Etsy-shop</a>
+        </div>
+        <div class="card">
+          <h3>afgelegd.</h3>
+          <p>Je fiets-, gravel- of MTB-route als 3D-geprinte reliëfkaart, met echte hoogtemeters.</p>
+          <a href="https://afgelegd.nl">Naar afgelegd.nl</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>© 2026 Vormwaar · Nederland</span>
+    <span>Vragen of een eigen idee? Stuur een bericht via <a href="https://www.etsy.com/shop/Vormwaar">Etsy</a>.</span>
+  </div>
+</footer>
+</body>
+</html>
